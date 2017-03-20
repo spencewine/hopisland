@@ -16,6 +16,7 @@ const publicUrl = '';
 
 module.exports = {
   devtool: 'source-map',
+  target : 'node',
   entry  : [
     paths.indexJs
   ],
@@ -100,6 +101,9 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({ options:
       { postcss: [ autoprefixer ] },
       eslint: {configFile: paths.eslint},
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
     })
 
   ],

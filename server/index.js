@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const routes = require('./routes');
 const passport = require('passport');
-// const { User } = require('./models');
+const { Buyers } = require('./models');
 const session = require('express-session');
 
 
@@ -36,13 +36,13 @@ passport.serializeUser((user, done) => {
   user ? done(null, user.id) : null;
 });
 
-// passport.deserializeUser((id, done) => {
-// 	/* retrieve user object using user id */
-//   User.findById(id)
-//     .then((user) => {
-//       done(null, user);
-//     });
-// });
+passport.deserializeUser((id, done) => {
+	/* retrieve user object using user id */
+  Buyers.findById(id)
+    .then((user) => {
+      done(null, user);
+    });
+});
 
 
 app.use(routes);
