@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -14,17 +14,12 @@ const extractSass = new ExtractTextPlugin('style.css');
 const publicUrl = '';
 
 
-
-
-
-
-
 module.exports = {
   devtool: 'source-map',
   entry  : [
     paths.indexJs
   ],
-  eslint: {configFile: paths.eslint},
+  // eslint: {configFile: paths.eslint},
   module: {
     rules: [
       {
@@ -42,23 +37,51 @@ module.exports = {
         ],
 
         // loader : extractSass.extract([ 'css', 'postcss', 'sass' ]),
-        loaders: [ 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader' ],
-        test   : /\.scss$/
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ],
+        test: /\.scss$/
       },
       {
-        loaders: [ 'style-loader', 'css-loader', 'postcss-loader' ],
-        test   : /\.css$/
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader'
+          }
+        ],
+        test: /\.css$/
       },
 
       {
+        test   : /\.jsx$/,
         exclude: /node_modules/,
         enforce: 'pre',
-        loader : 'eslint-loader',
-        query  : {presets: [ 'react', 'latest' ]},
-        test   : /\.jsx$/,
+        use    : [
+          {
+            loader : 'eslint-loader',
+            options: {presets: [ 'react', 'latest' ]}
+          }
+        ],
       }
 
-    ],
+    ]
+  },
   output: {
     filename  : 'bundle.js',
     path      : paths.dist,
@@ -73,22 +96,28 @@ module.exports = {
     }),
     new CaseSensitivePathsPlugin(),
     new WatchNodeModulesPlugin(paths.appNodeModules),
-    new webpack.HotModuleReplacementPlugin({multistep: true})
-  ],
-  postcss: () => [
-    autoprefixer({
-      browsers: [
-        '>1%',
-        'last 4 versions',
-        'Firefox ESR',
-        'not ie < 9'
-      ]
+    new webpack.HotModuleReplacementPlugin({multistep: true}),
+    new webpack.LoaderOptionsPlugin({ options:
+      { postcss: [ autoprefixer ] },
+      eslint: {configFile: paths.eslint},
     })
+
   ],
+  // postcss: () => [
+  //   autoprefixer({
+  //     browsers: [
+  //       '>1%',
+  //       'last 4 versions',
+  //       'Firefox ESR',
+  //       'not ie < 9'
+  //     ]
+  //   })
+  // ],
   resolve: {
     alias: {
       basscss    : paths.resolve(paths.nodeModules, 'basscss', 'css', 'basscss.css'),
       nodeModules: paths.nodeModules
     }
   }
+
 };
