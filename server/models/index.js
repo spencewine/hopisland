@@ -3,7 +3,7 @@
 // Require our models. Running each module registers the model into sequelize
 // so any other part of the application could call sequelize.model('User')
 // to get access to the User model.
-
+const db = require('./db');
 const Buyers = require('./buyers');
 const Product = require('./product');
 const Category = require('./category');
@@ -28,4 +28,4 @@ Product.hasMany(Review);
 Review.belongsTo(Product);
 
 
-module.exports = {Buyers, Product, Category, Hops, Orders};
+module.exports = {Buyers, Product, Category, Hops, Orders, Review, db};

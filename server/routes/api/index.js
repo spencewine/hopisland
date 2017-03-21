@@ -3,13 +3,13 @@
 const api = module.exports = require('express').Router();
 
 api
-  .get('/heartbeat', (req, res) => res.send({ok: true}));
-  // .use('/boards', require('./board'))
-  // .use('/notes', require('./note'))
-  // .use('/user', require('./user'))
+  .get('/heartbeat', (req, res) => res.send({ok: true}))
+  .use('/hops', require('./hops'))
+  .use('/reviews', require('./reviews'))
+  .use('/buyers', require('./buyers'))
   // .use('/auth', require('./auth'))
-  // .use('/comment', require('./comment'))
-  // .use('/notesfeed', require('./user_mention_in_note'))
+  .use('/orders', require('./orders'))
+  .use('/product', require('./product'));
   // .use('/unread', require('./unread_note'));
 
 // Send along any errors

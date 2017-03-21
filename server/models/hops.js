@@ -12,7 +12,9 @@ const Hops = db.define('hops', {
   activeGrowing: {
     type        : Sequelize.BOOLEAN,
     defaultValue: true
-  }
+  },
+  numberOfPlants     : Sequelize.INTEGER,
+  PriorYearProduction: Sequelize.INTEGER
 
 },
   {
