@@ -11,6 +11,10 @@ export default (props) => {
         <div className="collapse navbar-collapse">
 
             <NavLink to="/about">About</NavLink>
+
+            <NavLink to="/buyers">Buyers</NavLink>
+            <NavLink to="/shop">Shop</NavLink>
+
             <NavLink to="/contact">Contact</NavLink>
 
         </div>
