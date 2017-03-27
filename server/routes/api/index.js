@@ -4,13 +4,10 @@ const api = module.exports = require('express').Router();
 
 api
   .get('/heartbeat', (req, res) => res.send({ok: true}))
-  .use('/hops', require('./hops'))
-  .use('/reviews', require('./reviews'))
-  .use('/buyers', require('./buyers'))
+
+  .use('/user', require('./user'));
   // .use('/auth', require('./auth'))
-  .use('/orders', require('./orders'))
-  .use('/product', require('./product'));
-  // .use('/unread', require('./unread_note'));
+
 
 // Send along any errors
 api.use((err, req, res, next) => {

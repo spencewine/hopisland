@@ -107,16 +107,6 @@ module.exports = {
     })
 
   ],
-  // postcss: () => [
-  //   autoprefixer({
-  //     browsers: [
-  //       '>1%',
-  //       'last 4 versions',
-  //       'Firefox ESR',
-  //       'not ie < 9'
-  //     ]
-  //   })
-  // ],
   resolve: {
     alias: {
       basscss    : paths.resolve(paths.nodeModules, 'basscss', 'css', 'basscss.css'),

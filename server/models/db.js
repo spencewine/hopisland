@@ -4,7 +4,7 @@
 const Sequelize = require('sequelize');
 const chalk = require('chalk');
 const debug = require('debug')('sql');
-const name = 'hopisland';
+const name = 'node_react_template'; //CHANGE THIS NAME TO WHATEVER YOU WANT
 const url = process.env.DATABASE_URL || `postgres://localhost:5432/${name}`;
 
 console.log(chalk.yellow(`Opening database connection to ${url}`));
