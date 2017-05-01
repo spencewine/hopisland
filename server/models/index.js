@@ -10,6 +10,7 @@ const Category = require('./category');
 const Hops = require('./hops');
 const Orders = require('./orders');
 const Review = require('./review');
+const Contact = require('./contact');
 
 
 Category.hasMany(Product);
@@ -28,4 +29,4 @@ Product.hasMany(Review);
 Review.belongsTo(Product);
 
 
-module.exports = {Buyers, Product, Category, Hops, Orders, Review, db};
+module.exports = {Buyers, Product, Category, Hops, Orders, Review, db, Contact};

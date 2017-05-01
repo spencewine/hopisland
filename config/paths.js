@@ -17,6 +17,7 @@ const appDirectory = fs.realpathSync(process.cwd());
  * @returns {String} Absolute path resolved from the app directory
  */
 function resolveApp(...paths) {
+  console.log('PATHS', paths, appDirectory);
   return path.resolve(
     (paths[0].indexOf(appDirectory) === 0 ? '' : appDirectory),
     ...paths

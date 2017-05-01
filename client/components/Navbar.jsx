@@ -5,21 +5,34 @@ import {NavLink} from 'react-router-dom';
 export default (props) => {
 
   return (
-    <nav className="nav navbar-default">
-    <div className="container-fluid">
-      <div className="navbar navbar-fixed-top" role="navigation">
-        <div className="collapse navbar-collapse">
 
-            <NavLink to="/about">About</NavLink>
 
-            <NavLink to="/buyers">Buyers</NavLink>
-            <NavLink to="/shop">Shop</NavLink>
+          <nav className="navbar navbar-light navbarContainer" role="navigation">
+            <div className="container-fluid">
+            <div className="navbar-header">
+              <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+              </button>
+              <NavLink className='navBarLink' to="/home">
+                <img className='logo' src='./hop_island_logo.png'/>
+              </NavLink>
+            </div>
 
-            <NavLink to="/contact">Contact</NavLink>
+          <div className="collapse navbar-collapse" id="myNavbar">
+            <ul className="nav navbar-nav">
+              <li><NavLink className="navBarLink" to="/about">About</NavLink></li>
+              <li><NavLink className="navBarLink" to="/hops">Hops</NavLink></li>
+              <li><NavLink className="navBarLink" to="/buyers">Buyers</NavLink></li>
+              <li><NavLink className="navBarLink" to="/shop">Shop</NavLink></li>
+              <li><NavLink className="navBarLink" to="/contact">Contact</NavLink></li>
+            </ul>
 
         </div>
-        </div>
-    </div>
-    </nav>
+      </div>
+        </nav>
+
+
   );
 };

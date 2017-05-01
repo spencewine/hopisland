@@ -9,8 +9,8 @@ api
   .use('/buyers', require('./buyers'))
   // .use('/auth', require('./auth'))
   .use('/orders', require('./orders'))
-  .use('/product', require('./product'));
-  // .use('/unread', require('./unread_note'));
+  .use('/product', require('./product'))
+  .use('/contact', require('./contact'));
 
 // Send along any errors
 api.use((err, req, res, next) => {

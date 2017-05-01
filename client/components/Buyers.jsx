@@ -2,8 +2,10 @@ import React from 'react';
 
 export default () => {
   return (
-  <div>
+  <div className="title">
   <h1>Buyers</h1>
+
+
   </div>
   );
 };

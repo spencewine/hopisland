@@ -13,6 +13,7 @@ const extractSass = new ExtractTextPlugin('style.css');
 
 const publicUrl = '';
 
+console.log('PATHS>DIST', paths.src);
 
 module.exports = {
   devtool: 'source-map',
@@ -36,9 +37,9 @@ module.exports = {
         include: [
           paths.src
         ],
-
+        test: /\.scss$/,
         // loader : extractSass.extract([ 'css', 'postcss', 'sass' ]),
-        use: [
+        use : [
           {
             loader: 'style-loader'
           },
@@ -52,7 +53,7 @@ module.exports = {
             loader: 'sass-loader'
           }
         ],
-        test: /\.scss$/
+
       },
       {
         use: [
@@ -76,7 +77,7 @@ module.exports = {
         use    : [
           {
             loader : 'eslint-loader',
-            options: {presets: [ 'react', 'latest' ]}
+            options: {presets: [ 'react', 'env' ]}
           }
         ],
       }

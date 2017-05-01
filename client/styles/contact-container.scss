@@ -1,0 +1,122 @@
+.nameBox {
+    width: calc(25%/2);
+    height: 70px;
+    float: left;
+    border-top: 1px solid #D3D3D3;
+    border-left: 1px solid #D3D3D3;
+
+
+}
+
+.companyBox {
+    width:25%;
+    height: 70px;
+    border: 1px solid #D3D3D3;
+    border-bottom: none;
+}
+
+.emailBox{
+    width: 25%;
+    height: 70px;
+    float: left;
+    border-top: 1px solid #D3D3D3;
+    border-left: 1px solid #D3D3D3;
+}
+
+.stateAndInquiry{
+    width: calc(25%/3);
+    height: 70px;
+    float:left;
+    border-top: 1px solid #D3D3D3;
+    border-left:  1px solid #D3D3D3;
+
+}
+
+.phoneBox{
+    width: calc(25%/3);
+    height: 70px;
+    float:left;
+    border-top: 1px solid #D3D3D3;
+    border-right:  1px solid #D3D3D3;
+    border-left: 1px solid #D3D3D3;
+}
+
+.messageBox {
+    width: 50%;
+    height: 300px;
+    border: 1px solid #D3D3D3;
+}
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+textarea:focus, input:focus{
+    outline-style: none;
+    box-shadow: none;
+    border-color: none;
+
+}
+
+
+
+
+select{
+  border:none;
+  background-color: white;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+
+option{
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 14px;
+}
+
+*:focus {
+    outline-style: none;
+}
+
+section {
+    display:block;
+    vertical-align: baseline;
+
+}
+ fieldset{
+     display: block;
+     margin: 0;
+
+
+ }
+
+input {
+    display: block;
+    border: none;
+    padding: 5px;
+}
+#locationOption{
+    color: #d3d3d3 !important;
+}
+
+textarea::placeholder, input::placeholder{
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 14px;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    white-space: normal;
+   word-wrap: break-word;
+   display: block;
+   word-wrap: break-word !important;
+   white-space: normal!important;
+   padding-left: 3px;
+}
+
+
+form {
+    width: 100%;
+
+}
